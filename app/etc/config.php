@@ -1,10 +1,12 @@
 <?php
 return [
     'modules' => [
+        'AHT_Blog' => 1,
         'Magento_Store' => 1,
         'Magento_Directory' => 1,
         'Magento_Theme' => 1,
         'Magento_Backend' => 1,
+        'GOR_HC' => 1,
         'Magento_Variable' => 1,
         'Magento_Eav' => 1,
         'Magento_AdminNotification' => 1,
@@ -224,6 +226,7 @@ return [
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistGraphQl' => 1,
         'Magento_WishlistSampleData' => 1,
+        'MyCompany_ExampleAdminNewPage' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1
     ]
