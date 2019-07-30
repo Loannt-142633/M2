@@ -2,11 +2,12 @@
 return [
     'modules' => [
         'AHT_Blog' => 1,
+        'AHT_Featured' => 1,
         'Magento_Store' => 1,
         'Magento_Directory' => 1,
         'Magento_Theme' => 1,
+        'Blog_Post' => 1,
         'Magento_Backend' => 1,
-        'GOR_HC' => 1,
         'Magento_Variable' => 1,
         'Magento_Eav' => 1,
         'Magento_AdminNotification' => 1,

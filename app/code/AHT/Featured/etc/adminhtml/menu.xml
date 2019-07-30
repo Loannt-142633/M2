@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+		<add id="AHT_Featured::featured" 
+      	title="Featured" 
+      	translate="title" 
+      	module="AHT_Featured" 
+      	parent="AHT_Blog::blog" 
+      	sortOrder="10" 
+      	dependsOnModule="AHT_Featured" 
+      	action="featured/index/index" 
+      	resource="AHT_Featured::featured"/>
+		<add id="AHT_Featured::catalog_products" title="Products" translate="title" module="AHT_Featured" sortOrder="10" parent="AHT_Blog::blog" action="catalog/product/" resource="Magento_Catalog::products"/>
+    </menu>
+</config>

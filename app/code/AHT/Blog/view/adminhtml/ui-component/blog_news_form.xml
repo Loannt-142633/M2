@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">blog_news_form.blog_news_form_data_source</item>
+            <item name="deps" xsi:type="string">blog_news_form.blog_news_form_data_source</item>
+        </item>
+
+        <item name="label" xsi:type="string" translate="true">News Form</item>
+       
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">news_form</item>
+        </item>
+
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">AHT\Blog\Block\Adminhtml\News\Edit\BackButton</item>
+            <item name="delete" xsi:type="string">AHT\Blog\Block\Adminhtml\News\Edit\DeleteButton</item>
+            <item name="reset" xsi:type="string">AHT\Blog\Block\Adminhtml\News\Edit\ResetButton</item>
+            <item name="save" xsi:type="string">AHT\Blog\Block\Adminhtml\News\Edit\SaveButton</item>
+        </item>
+    </argument>
+
+    <dataSource name="blog_news_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">AHT\Blog\Model\Post\DataProvider</argument>
+            <argument name="name" xsi:type="string">blog_news_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">post_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="blog/news/save" />
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+
+    <fieldset name="news">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="collapsible" xsi:type="boolean">false</item>
+                <item name="label" xsi:type="string" translate="true">News Fieldset</item>
+            </item>
+        </argument>
+
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Name</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">news</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="url_key">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Url Key</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">news</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="content">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Content</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">news</item>
+                </item>
+            </argument>
+        </field>
+        <field name="status">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Status</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">options</item>
+                    <item name="source" xsi:type="string">news</item>
+                </item>
+            </argument>
+            <argument name="options" xsi:type="array">
+                <item name="disable" xsi:type="array">
+                    <item name="value" xsi:type="string">0</item>
+                    <item name="label" xsi:type="string" translate="true">Disabled</item>
+                </item>
+                <item name="enable" xsi:type="array">
+                    <item name="value" xsi:type="string">1</item>
+                    <item name="label" xsi:type="string" translate="true">Enabled</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

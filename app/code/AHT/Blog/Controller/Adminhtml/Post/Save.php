@@ -69,7 +69,7 @@ class Save extends \AHT\Blog\Controller\Adminhtml\Post
             }
             $model->setData($data);
             try {
-                $model->save();
+                $this->_postRepository->save($model);
                 $this->messageManager->addSuccess(__('You saved the item.'));
                 $this->_sessionFactory->setFormData(false);
                 if ($this->getRequest()->getParam('back')) {
